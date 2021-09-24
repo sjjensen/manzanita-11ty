@@ -1,0 +1,45 @@
+---
+layout: base.njk
+title: Home
+---
+
+<section class="mb-32 container mx-auto w-11/12 max-w-3xl">
+  <figure class="mb-8">
+      <img src="/img/manzanita-gravel-bike-overall.jpg" alt="bike">
+  </figure>
+  <div class="sm:w-10/12 lg:w-8/12">
+    <h1 class="font-bold text-4xl sm:text-5xl md:text-6xl">Custom steel bike frames for your next adventure</h1>
+    <p class="mt-12"><a class="cta" href="/contact">Get in touch</a></p>
+  </div>
+</section>
+
+<section class="mb-32 container mx-auto w-11/12 max-w-3xl">
+  <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Latest builds</h2>
+  <div class="sm:grid sm:grid-cols-2 sm:gap-x-10">
+    {% for post in collections.bikeFeed %}
+      {% include "_card.njk" %}
+    {% endfor %}
+  </div>
+    <p class="mt-8"><a class="cta" href="/bikes">View more bikes</a></p>
+</section>
+
+<section class="mb-32 container mx-auto w-9/12 max-w-screen-sm">
+  <blockquote class="mb-16">
+    <h2 class="text-2xl sm:text-4xl md:text-5xl font-bold mb-4">&ldquo;The only drawback to ordering a Manzanita is that you will soon want a stable of them.&rdquo;</h2>
+    <p>– Collin W.</p>
+  </blockquote>
+  <blockquote>
+    <h2 class="text-2xl sm:text-4xl md:text-5xl font-bold mb-4">"I just got back from my first bikepacking trip and I was so grateful that I had my Manzanita to accompany me!"</h2>
+    <p>– Rachel B.</p>
+  </blockquote>
+</section>
+
+<section class="mb-32 container mx-auto w-11/12 max-w-3xl">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">From the blog</h2>
+    <div class="sm:grid sm:grid-cols-2 sm:gap-x-10">
+      {% for post in collections.blogFeed %}
+        {% include "_card.njk" %}
+      {% endfor %}
+    </div>
+    <p class="mt-8"><a class="cta" href="/blog">View all posts</a></p>
+</section>

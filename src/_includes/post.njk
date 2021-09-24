@@ -1,0 +1,22 @@
+---
+layout: base.njk
+---
+
+<article class="prose md:prose-lg lg:prose-xl container mx-auto w-11/12 mb-32 max-w-3xl">
+  <h1 class="text-4xl font-bold mb-16">{{ title }}</h1>
+  {{ content | safe }}
+</article>
+
+  {% set prevBikePost = collections.bikes | getPreviousCollectionItem(page) %}
+  {% set nextBikePost = collections.bikes | getNextCollectionItem(page) %}
+  {% set prevBlogPost = collections.blog | getPreviousCollectionItem(page) %}
+  {% set nextBlogPost = collections.blog | getNextCollectionItem(page) %}
+
+    {% if prevBikePost or nextBikePost or prevBlogPost or nextBlogPost %}<div class="prose md:prose-lg lg:prose-xl container mx-auto w-11/12 mb-32 -mt-16 max-w-3xl">{% endif %}
+
+    {% if prevBikePost %}<p>Previous: <a href="{{ prevBikePost.url }}">{{ prevBikePost.data.title }}</a></p>{% endif %}
+    {% if nextBikePost %}<p>Next: <a href="{{ nextBikePost.url }}">{{ nextBikePost.data.title }}</a></p>{% endif %}
+    {% if prevBlogPost %}<p>Previous: <a href="{{ prevBlogPost.url }}">{{ previousBlogPost.data.title }}</a></p>{% endif %}
+    {% if nextBlogPost %}<p>Next: <a href="{{ nextBlogPost.url }}">{{ nextBlogPost.data.title }}</a></p>{% endif %}
+
+    {% if prevBikePost or nextBikePost or prevBlogPost or nextBlogPost %}</div>{% endif %}

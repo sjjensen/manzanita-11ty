@@ -1,0 +1,15 @@
+---
+layout: base.njk
+---
+
+<article class="prose md:prose-lg lg:prose-xl container mx-auto w-11/12 mb-32 max-w-3xl">
+  <h1 class="text-4xl font-bold mb-16">{{ title }}</h1>
+  <p>On this page you should find answers to common questions, including, "What's the meaning of life?", which is most definitey to ride bikes more often ;>)</p>
+  <p>If you have a question you don't see, feel free to <a href="/contact">contact me</a>.</p>
+  {% if content | toc | safe %}
+  <aside class="font-bold underline my-8">
+    {{ content | toc | safe }}
+  </aside>
+  {% endif %}
+  {{ content | safe }}
+</article>

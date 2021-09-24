@@ -1,0 +1,11 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@layer components {
+  .cta {
+    @apply font-bold text-white bg-black p-4 rounded-sm no-underline md:text-lg lg:text-xl;
+  }
+}

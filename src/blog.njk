@@ -1,0 +1,11 @@
+---
+layout: base.njk
+permalink: /blog/
+---
+<div class="container mx-auto w-11/12 mb-32 max-w-3xl">
+  <div class="sm:grid sm:grid-cols-2 sm:gap-x-10">
+    {% for post in collections.blog | reverse %}
+      {% include "_card.njk" %}
+    {% endfor %}
+  </div>
+</div>
